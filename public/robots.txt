@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://plants.wdbloog.com/sitemap.xml

@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --color-forest-950: #0f1e16;
+  --color-forest-900: #1b3527;
+  --color-forest-800: #254a36;
+  --color-forest-700: #315b43;
+  --color-forest-600: #3e7355;
+  --color-sage-600: #547761;
+  --color-sage-500: #6f957c;
+  --color-sage-200: #d6e3d9;
+  --color-sage-100: #eaf1ec;
+  --color-sage-50: #f4f8f5;
+  --color-cream-50: #fcfbf7;
+  --color-cream-100: #f7f7f0;
+  --color-cream-200: #edece1;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f7f7f0;
+  color: #1c1917;
+}
+
+h1, h2, h3, .font-editorial {
+  font-family: var(--font-serif);
+}
+
+/* Custom smooth scroll & styling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print styles for calculator results */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "/",
+  "name": "PlantCare Lab",
+  "short_name": "PlantCare",
+  "description": "Smart Plant Care Tools & Guides – Science-backed indoor plant watering calculators, light diagnostic tools, soil mix ratios, and care guides.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F7F7F0",
+  "theme_color": "#315B43",
+  "lang": "en-US",
+  "categories": ["lifestyle", "utilities", "education"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Watering Calculator",
+      "short_name": "Watering",
+      "url": "/tools/plant-watering-calculator",
+      "description": "Calculate exact soil drying and watering intervals"
+    },
+    {
+      "name": "Plant Light Finder",
+      "short_name": "Light Finder",
+      "url": "/tools/plant-light-finder",
+      "description": "Find suitable plants by window orientation and distance"
+    },
+    {
+      "name": "Problem Checker",
+      "short_name": "Diagnostics",
+      "url": "/tools/plant-problem-checker",
+      "description": "Troubleshoot yellowing leaves and brown spots"
+    }
+  ]
+}
