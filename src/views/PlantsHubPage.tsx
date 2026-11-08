@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { PLANTS_DATA, PlantDetail } from '../data/plants';
 import { AdSlot } from '../components/ads/AdSlot';
 import { Leaf, Search, ShieldCheck, Sun, Droplets, ArrowRight } from 'lucide-react';
+import { BotanicalImage } from '../components/ui/BotanicalImage';
 
 interface PlantsHubPageProps {
   onNavigate: (path: string) => void;
@@ -94,11 +95,10 @@ export const PlantsHubPage: React.FC<PlantsHubPageProps> = ({ onNavigate }) => {
           >
             <div>
               <div className="relative aspect-4/3 overflow-hidden bg-stone-100">
-                <img
+                <BotanicalImage
                   src={plant.imageUrl}
                   alt={plant.imageAlt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
+                  className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-xs text-stone-900 shadow-2xs">
                   {plant.difficulty}

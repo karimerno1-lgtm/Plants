@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { GUIDES_DATA, CareGuide } from '../data/guides';
 import { AdSlot } from '../components/ads/AdSlot';
 import { BookOpen, Search, Clock, ArrowRight, User } from 'lucide-react';
+import { BotanicalImage } from '../components/ui/BotanicalImage';
 
 interface GuidesHubPageProps {
   onNavigate: (path: string) => void;
@@ -78,11 +79,10 @@ export const GuidesHubPage: React.FC<GuidesHubPageProps> = ({ onNavigate }) => {
           >
             <div>
               <div className="aspect-16/9 overflow-hidden bg-stone-100">
-                <img
+                <BotanicalImage
                   src={guide.heroImage}
                   alt={guide.heroAlt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
+                  className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 

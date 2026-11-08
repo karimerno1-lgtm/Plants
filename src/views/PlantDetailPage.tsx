@@ -3,6 +3,7 @@ import { PLANTS_DATA, PlantDetail } from '../data/plants';
 import { TOOLS_DATA } from '../data/tools';
 import { AdSlot } from '../components/ads/AdSlot';
 import { ChevronRight, Sun, Droplets, Gauge, Thermometer, Layers, FlaskConical, AlertTriangle, ShieldCheck, Scissors, HelpCircle, ArrowRight, Wrench } from 'lucide-react';
+import { BotanicalImage } from '../components/ui/BotanicalImage';
 
 interface PlantDetailPageProps {
   plantSlug: string;
@@ -71,10 +72,10 @@ export const PlantDetailPage: React.FC<PlantDetailPageProps> = ({ plantSlug, onN
         </div>
 
         <div className="lg:col-span-5 aspect-4/3 lg:aspect-square rounded-2xl overflow-hidden bg-stone-100 shadow-md">
-          <img
+          <BotanicalImage
             src={plant.imageUrl}
             alt={plant.imageAlt}
-            className="w-full h-full object-cover"
+            className="w-full h-full"
           />
         </div>
       </div>

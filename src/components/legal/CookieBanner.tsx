@@ -43,7 +43,7 @@ export const CookieBanner: React.FC<CookieBannerProps> = ({ onNavigate }) => {
             Privacy & Cookie Preferences
           </h4>
           <p className="text-xs text-stone-600 leading-relaxed">
-            PlantCare Lab uses essential cookies to save your calculator preferences, support offline PWA functions, and deliver non-intrusive Google AdSense sponsor ads.
+            PlantCare Lab uses essential cookies to save your calculator preferences, preserve session performance, and deliver non-intrusive Google AdSense sponsor ads.
           </p>
           <div className="pt-1 flex items-center gap-3 text-[11px] text-stone-500">
             <button

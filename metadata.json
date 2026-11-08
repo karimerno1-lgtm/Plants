@@ -1,6 +1,6 @@
 {
   "name": "PlantCare Lab",
-  "description": "Smart Plant Care Tools & Guides – Interactive watering calculators, lighting diagnostics, soil mixes, plant library, and PWA companion.",
+  "description": "Smart Plant Care Tools & Guides – Precision watering calculators, indoor foot-candle light diagnostics, chunky soil recipes, and houseplant care encyclopedia.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

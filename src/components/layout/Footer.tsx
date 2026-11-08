@@ -1,6 +1,5 @@
 import React from 'react';
-import { PWAInstallButton } from '../pwa/PWAInstallButton';
-import { Leaf, ShieldCheck, Heart, Sparkles, ExternalLink } from 'lucide-react';
+import { Leaf, ShieldCheck, Heart, Sparkles, ExternalLink, CheckCircle2 } from 'lucide-react';
 import { TOOLS_DATA } from '../../data/tools';
 
 interface FooterProps {
@@ -14,35 +13,36 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   };
 
   return (
-    <footer className="mt-20 border-t border-stone-200 bg-[#1B3527] text-stone-300">
+    <footer className="mt-20 border-t border-stone-200 bg-[#162B20] text-stone-300">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Col (2 Cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-emerald-800 flex items-center justify-center text-white shadow-xs">
-                <Leaf className="w-5 h-5 text-emerald-200" />
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-linear-to-br from-[#315B43] to-[#0F1E16] border border-emerald-600/30 flex items-center justify-center text-white shadow-xs">
+                <Leaf className="w-5 h-5 text-emerald-300" />
               </div>
-              <span className="text-xl font-bold font-editorial text-white tracking-tight">
-                PlantCare <span className="text-emerald-400">Lab</span>
-              </span>
+              <div>
+                <span className="text-xl font-bold font-editorial text-white tracking-tight block leading-tight">
+                  PlantCare <span className="text-emerald-400">Lab</span>
+                </span>
+                <span className="text-[10px] uppercase tracking-wider text-emerald-300/80 font-medium block">
+                  Scientific Indoor Plant Care
+                </span>
+              </div>
             </div>
 
             <p className="text-xs text-stone-300 leading-relaxed max-w-md">
               PlantCare Lab is an independent botanical laboratory providing science-backed indoor plant watering calculators, lighting diagnostics, custom soil mix formulations, and comprehensive houseplant care guides.
             </p>
 
-            <div className="pt-2">
-              <PWAInstallButton variant="footer" />
-            </div>
-
-            <div className="pt-2 flex items-center gap-3 text-xs text-stone-400">
-              <span className="inline-flex items-center gap-1">
+            <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-stone-300">
+              <span className="inline-flex items-center gap-1.5 font-medium">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" /> Peer-Reviewed Botany
               </span>
               <span>•</span>
-              <span className="inline-flex items-center gap-1">
-                <Sparkles className="w-4 h-4 text-emerald-400" /> Zero Guesswork
+              <span className="inline-flex items-center gap-1.5 font-medium">
+                <Sparkles className="w-4 h-4 text-emerald-400" /> 100% Free Calculators
               </span>
             </div>
           </div>

@@ -17,7 +17,7 @@ export const OfflinePage: React.FC<OfflinePageProps> = ({ onNavigate }) => {
           You Are Currently Offline
         </h1>
         <p className="text-sm text-stone-600 max-w-md mx-auto leading-relaxed">
-          No internet connection detected. Because PlantCare Lab is an installable PWA, your calculators and previously viewed botanical guides remain accessible right from your cache.
+          No internet connection detected. Your calculators and previously loaded botanical data remain accessible while you wait to reconnect.
         </p>
       </div>
 

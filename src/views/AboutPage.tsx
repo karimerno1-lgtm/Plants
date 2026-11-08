@@ -50,7 +50,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </div>
           <h2 className="text-base font-bold text-stone-900">3. Accessible Worldwide</h2>
           <p className="text-xs text-stone-600 leading-relaxed">
-            Serving indoor plant parents across the USA, UK, Canada, Australia, and Europe with metric and imperial unit conversions and installable offline PWA technology.
+            Serving indoor plant parents across the USA, UK, Canada, Australia, and Europe with metric and imperial unit conversions and lightning-fast web calculator technology.
           </p>
         </div>
       </div>

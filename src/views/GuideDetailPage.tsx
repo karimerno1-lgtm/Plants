@@ -4,6 +4,7 @@ import { TOOLS_DATA } from '../data/tools';
 import { PLANTS_DATA } from '../data/plants';
 import { AdSlot } from '../components/ads/AdSlot';
 import { ChevronRight, Clock, Calendar, CheckCircle2, HelpCircle, Wrench, Leaf, ArrowRight, Share2 } from 'lucide-react';
+import { BotanicalImage } from '../components/ui/BotanicalImage';
 
 interface GuideDetailPageProps {
   guideSlug: string;
@@ -63,10 +64,10 @@ export const GuideDetailPage: React.FC<GuideDetailPageProps> = ({ guideSlug, onN
 
       {/* Featured Hero Image */}
       <div className="aspect-16/9 rounded-3xl overflow-hidden bg-stone-100 shadow-sm border border-stone-200/80">
-        <img
+        <BotanicalImage
           src={guide.heroImage}
           alt={guide.heroAlt}
-          className="w-full h-full object-cover"
+          className="w-full h-full"
         />
       </div>
 

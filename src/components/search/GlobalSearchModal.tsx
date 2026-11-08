@@ -3,6 +3,7 @@ import { Search, X, Wrench, Leaf, BookOpen, ArrowRight } from 'lucide-react';
 import { TOOLS_DATA } from '../../data/tools';
 import { PLANTS_DATA } from '../../data/plants';
 import { GUIDES_DATA } from '../../data/guides';
+import { BotanicalImage } from '../ui/BotanicalImage';
 
 interface GlobalSearchModalProps {
   isOpen: boolean;
@@ -145,7 +146,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({ isOpen, on
                     onClick={() => handleSelect(`/plants/${plant.slug}`)}
                     className="text-left p-2 rounded-xl hover:bg-emerald-50 border border-stone-100 transition-colors flex items-center gap-3 cursor-pointer group"
                   >
-                    <img src={plant.imageUrl} alt={plant.name} className="w-10 h-10 rounded-lg object-cover shrink-0" />
+                    <BotanicalImage src={plant.imageUrl} alt={plant.name} className="w-10 h-10 rounded-lg shrink-0" />
                     <div className="overflow-hidden">
                       <div className="text-xs font-bold text-stone-900 truncate group-hover:text-emerald-950">
                         {plant.name}

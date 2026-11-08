@@ -24,6 +24,8 @@ import { TOOLS_DATA } from './data/tools';
 import { PLANTS_DATA } from './data/plants';
 import { GUIDES_DATA } from './data/guides';
 
+import { resolvePageSeo, applySeoMetadata } from './utils/seo';
+
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
     if (typeof window !== 'undefined') {
@@ -43,59 +45,10 @@ export default function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Update Page Title and Canonical Link dynamically on route change
+  // Update Page Title, Canonical, Meta Description, OG, and JSON-LD on route change
   useEffect(() => {
-    const baseUrl = 'https://plants.wdbloog.com';
-    let title = 'PlantCare Lab – Smart Plant Care Tools & Guides';
-    let canonical = `${baseUrl}${currentPath}`;
-
-    if (currentPath === '/tools') {
-      title = 'Scientific Plant Calculators & Tools – PlantCare Lab';
-    } else if (currentPath.startsWith('/tools/')) {
-      const slug = currentPath.replace('/tools/', '');
-      const tool = TOOLS_DATA.find(t => t.slug === slug);
-      if (tool) {
-        title = `${tool.name} – PlantCare Lab`;
-      }
-    } else if (currentPath === '/plants') {
-      title = 'Indoor Plant Library & Horticultural Care Dossiers – PlantCare Lab';
-    } else if (currentPath.startsWith('/plants/')) {
-      const slug = currentPath.replace('/plants/', '');
-      const plant = PLANTS_DATA.find(p => p.slug === slug);
-      if (plant) {
-        title = `${plant.name} Care Guide & Growing Requirements – PlantCare Lab`;
-      }
-    } else if (currentPath === '/guides') {
-      title = 'Indoor Horticulture & Plant Care Guides – PlantCare Lab';
-    } else if (currentPath.startsWith('/guides/')) {
-      const slug = currentPath.replace('/guides/', '');
-      const guide = GUIDES_DATA.find(g => g.slug === slug);
-      if (guide) {
-        title = `${guide.seoTitle} – PlantCare Lab`;
-      }
-    } else if (currentPath === '/about') {
-      title = 'About PlantCare Lab – Botanical Science & Editorial Standards';
-    } else if (currentPath === '/contact') {
-      title = 'Contact & Horticultural Inquiries – PlantCare Lab';
-    } else if (currentPath === '/privacy-policy') {
-      title = 'Privacy Policy & AdSense Disclosures – PlantCare Lab';
-    } else if (currentPath === '/terms') {
-      title = 'Terms of Service – PlantCare Lab';
-    } else if (currentPath === '/disclaimer') {
-      title = 'Horticultural & Veterinary Disclaimer – PlantCare Lab';
-    } else if (currentPath === '/cookie-policy') {
-      title = 'Cookie Policy & Consent – PlantCare Lab';
-    } else if (currentPath === '/offline') {
-      title = 'Offline Mode – PlantCare Lab';
-    }
-
-    document.title = title;
-
-    // Update or insert canonical link element
-    let canonicalEl = document.querySelector('link[rel="canonical"]');
-    if (canonicalEl) {
-      canonicalEl.setAttribute('href', canonical);
-    }
+    const seo = resolvePageSeo(currentPath);
+    applySeoMetadata(seo);
   }, [currentPath]);
 
   // Navigate handler that wraps pushState

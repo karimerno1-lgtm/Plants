@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { PWAInstallButton } from '../components/pwa/PWAInstallButton';
 import { AdSlot } from '../components/ads/AdSlot';
-import { Search, Droplets, Sun, Box, Layers, Activity, Sparkles, ArrowRight, ShieldCheck, CheckCircle2, BookOpen, Compass, Mail, Leaf } from 'lucide-react';
+import { Search, Droplets, Sun, Box, Layers, Activity, Sparkles, ArrowRight, ShieldCheck, CheckCircle2, BookOpen, Compass, Mail, Leaf, Stethoscope } from 'lucide-react';
 import { TOOLS_DATA } from '../data/tools';
 import { PLANTS_DATA } from '../data/plants';
 import { GUIDES_DATA } from '../data/guides';
+import { BotanicalImage } from '../components/ui/BotanicalImage';
 
 interface HomePageProps {
   onNavigate: (path: string) => void;
@@ -62,19 +62,43 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSearch }) 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <button
               onClick={() => onNavigate('/tools/plant-watering-calculator')}
-              className="px-6 py-3 rounded-xl bg-[#315B43] hover:bg-[#254A36] text-white text-sm font-semibold shadow-md hover:shadow-lg active:scale-98 transition-all flex items-center gap-2 cursor-pointer"
+              className="px-6 py-3.5 rounded-xl bg-[#315B43] hover:bg-[#254A36] text-white text-sm font-bold shadow-md hover:shadow-lg active:scale-98 transition-all flex items-center gap-2 cursor-pointer"
             >
               <Droplets className="w-4 h-4 text-emerald-300" />
-              Try Watering Calculator
+              Watering Calculator
+            </button>
+            <button
+              onClick={() => onNavigate('/tools/plant-problem-checker')}
+              className="px-6 py-3.5 rounded-xl bg-amber-50 hover:bg-amber-100/90 border border-amber-300/80 text-amber-950 text-sm font-bold shadow-xs active:scale-98 transition-all flex items-center gap-2 cursor-pointer"
+            >
+              <Stethoscope className="w-4 h-4 text-amber-700" />
+              Symptom Checker
             </button>
             <button
               onClick={() => onNavigate('/plants')}
-              className="px-6 py-3 rounded-xl bg-white hover:bg-stone-50 border border-stone-300 text-stone-800 text-sm font-semibold shadow-xs transition-all flex items-center gap-2 cursor-pointer"
+              className="px-6 py-3.5 rounded-xl bg-white hover:bg-stone-50 border border-stone-300 text-stone-800 text-sm font-semibold shadow-xs active:scale-98 transition-all flex items-center gap-2 cursor-pointer"
             >
               <Leaf className="w-4 h-4 text-emerald-800" />
-              Explore 10 Core Plants
+              Plant Library
             </button>
-            <PWAInstallButton variant="hero" />
+          </div>
+
+          {/* Botanical Trust Badges */}
+          <div className="pt-4 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-stone-500">
+            <span className="flex items-center gap-1.5 font-medium">
+              <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+              100% Free Tools
+            </span>
+            <span className="hidden sm:inline text-stone-300">•</span>
+            <span className="flex items-center gap-1.5 font-medium">
+              <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+              Inverse-Square Light Physics
+            </span>
+            <span className="hidden sm:inline text-stone-300">•</span>
+            <span className="flex items-center gap-1.5 font-medium">
+              <CheckCircle2 className="w-4 h-4 text-emerald-700" />
+              ASPCA Pet Toxicity Standards
+            </span>
           </div>
         </div>
       </section>
@@ -167,11 +191,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSearch }) 
               className="rounded-2xl border border-stone-200/80 bg-white overflow-hidden shadow-xs hover:shadow-md transition-all group cursor-pointer flex flex-col"
             >
               <div className="relative aspect-4/3 overflow-hidden bg-stone-100">
-                <img
+                <BotanicalImage
                   src={plant.imageUrl}
                   alt={plant.imageAlt}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
+                  className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                 />
                 <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-xs text-stone-900 shadow-2xs">
                   {plant.difficulty}
@@ -280,11 +303,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenSearch }) 
             >
               <div>
                 <div className="aspect-16/9 overflow-hidden bg-stone-100">
-                  <img
+                  <BotanicalImage
                     src={guide.heroImage}
                     alt={guide.heroAlt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
+                    className="w-full h-full group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-5">

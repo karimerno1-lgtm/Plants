@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { PWAInstallButton } from '../pwa/PWAInstallButton';
-import { Search, Menu, X, Leaf, Wrench, BookOpen, Compass, ChevronDown } from 'lucide-react';
+import { Search, Menu, X, Leaf, Wrench, BookOpen, Compass, ChevronDown, Sparkles } from 'lucide-react';
 import { TOOLS_DATA } from '../../data/tools';
 
 interface NavbarProps {
@@ -33,17 +32,18 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
         <div className="flex items-center gap-8">
           <button
             onClick={() => handleNav('/')}
-            className="flex items-center gap-2.5 text-left group cursor-pointer"
+            className="flex items-center gap-3 text-left group cursor-pointer"
           >
-            <div className="w-9 h-9 rounded-xl bg-[#315B43] group-hover:bg-[#254A36] flex items-center justify-center text-white shadow-xs transition-colors">
-              <Leaf className="w-5 h-5 text-emerald-200" />
+            <div className="relative w-10 h-10 rounded-xl bg-linear-to-br from-[#315B43] to-[#1B3527] border border-emerald-600/30 flex items-center justify-center text-white shadow-xs group-hover:shadow-md transition-all">
+              <Leaf className="w-5 h-5 text-emerald-300 group-hover:scale-110 transition-transform" />
+              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-400 border-2 border-white ring-1 ring-amber-300"></span>
             </div>
             <div>
-              <span className="text-lg font-bold font-editorial text-stone-900 tracking-tight block leading-tight">
+              <span className="text-xl font-bold font-editorial text-stone-900 tracking-tight block leading-tight">
                 PlantCare <span className="text-[#315B43]">Lab</span>
               </span>
-              <span className="text-[10px] font-medium tracking-wide uppercase text-stone-500 block">
-                Tools & Guides
+              <span className="text-[10px] font-semibold tracking-wider uppercase text-emerald-800/80 block">
+                Botanical Tools & Guides
               </span>
             </div>
           </button>
@@ -136,8 +136,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
             </kbd>
           </button>
 
-          {/* PWA Install Button */}
-          <PWAInstallButton variant="nav" />
+          {/* All Calculators Quick CTA */}
+          <button
+            onClick={() => handleNav('/tools')}
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-white bg-[#315B43] hover:bg-[#254A36] active:scale-98 rounded-xl shadow-xs transition-all cursor-pointer"
+          >
+            <Wrench className="w-3.5 h-3.5 text-emerald-200" />
+            <span>Calculators</span>
+          </button>
 
           {/* Mobile Menu Toggle */}
           <button
